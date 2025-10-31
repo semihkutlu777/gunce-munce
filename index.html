@@ -581,12 +581,12 @@
   <p>Bu sayfa <span id="view-count">yükleniyor...</span> kez görüntülendi.</p>
 
   <script>
-    // Benzersiz namespace ve pageKey belirle
-    const namespace = "semih_blog";   // Projene özel bir isim
-    const pageKey   = "anasayfa";     // Bu sayfa için anahtar
+    // CountAPI için namespace ve pageKey
+    const namespace = "semih_blog";  // Projene özel bir isim
+    const pageKey   = "anasayfa";    // Bu sayfa için anahtar
 
-    // CountAPI üzerinden sayacı artır
-    fetch(`https://api.countapi.xyz/update/${namespace}/${pageKey}/?amount=1`)
+    // Ziyaretçi sayısını artır
+    fetch(`https://api.countapi.xyz/hit/${namespace}/${pageKey}`)
       .then(res => res.json())
       .then(data => {
         document.getElementById("view-count").innerText = data.value;
@@ -595,10 +595,11 @@
         document.getElementById("view-count").innerText = "Bağlantı hatası!";
         console.error("CountAPI hatası:", err);
       });
-  </script>  
+  </script>
     
   </body>
 </html>
+
 
 
 
