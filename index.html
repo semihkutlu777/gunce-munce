@@ -570,37 +570,36 @@
       <p>&copy; 2025 Semih Kutlu. Tüm Hakları Saklıdır</p>
     </div>
 
-   <p>Bu sayfa <span id="view-count">0</span> kez görüntülendi.</p>
-
-
-  
-    <script
+<script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-
-<h2>İnternetsiz Ziyaretçi Sayacı</h2>
-  <p>Bu sayfa <span id="view-count">0</span> kez görüntülendi.</p>
+    
+     <!-- Sayaç -->
+   <h2>Bloguma Hoş Geldiniz</h2>
+  <p>Bu sayfa <span id="view-count">yükleniyor...</span> kez görüntülendi.</p>
 
   <script>
-    // LocalStorage’den sayıyı al, yoksa 0
-    let count = localStorage.getItem("anasayfaSayaci") || 0;
+    // Benzersiz namespace ve pageKey belirle
+    const namespace = "semih_blog";   // Projene özel bir isim
+    const pageKey   = "anasayfa";     // Bu sayfa için anahtar
 
-    // Sayacı 1 artır
-    count = Number(count) + 1;
-
-    // LocalStorage’a kaydet
-    localStorage.setItem("anasayfaSayaci", count);
-
-    // Sayıyı ekranda göster
-    document.getElementById("view-count").innerText = count;
-  </script>
-
-    
+    // CountAPI üzerinden sayacı artır
+    fetch(`https://api.countapi.xyz/update/${namespace}/${pageKey}/?amount=1`)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("view-count").innerText = data.value;
+      })
+      .catch(err => {
+        document.getElementById("view-count").innerText = "Bağlantı hatası!";
+        console.error("CountAPI hatası:", err);
+      });
+  </script>  
     
   </body>
 </html>
+
 
 
 
