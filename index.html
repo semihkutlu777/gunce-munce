@@ -580,28 +580,28 @@
       crossorigin="anonymous"
     ></script>
 
- <p>Bu sayfa <span id="view-count">yükleniyor...</span> kez görüntülendi.</p>
+<h2>İnternetsiz Ziyaretçi Sayacı</h2>
+  <p>Bu sayfa <span id="view-count">0</span> kez görüntülendi.</p>
 
-<script>
-  // Benzersiz bir anahtar belirle (örnek: domain_adin_anasayfa)
-  const namespace = "semih_blog";  // senin blog adın olabilir
-  const pageKey = "anasayfa";      // sayfaya göre değiştir
+  <script>
+    // LocalStorage’den sayıyı al, yoksa 0
+    let count = localStorage.getItem("anasayfaSayaci") || 0;
 
-  fetch(`https://api.countapi.xyz/update/${namespace}/${pageKey}/?amount=1`)
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById("view-count").innerText = data.value;
-    })
-    .catch(err => {
-      document.getElementById("view-count").innerText = "Bağlantı hatası!";
-      console.error("CountAPI hatası:", err);
-    });
-</script>
+    // Sayacı 1 artır
+    count = Number(count) + 1;
+
+    // LocalStorage’a kaydet
+    localStorage.setItem("anasayfaSayaci", count);
+
+    // Sayıyı ekranda göster
+    document.getElementById("view-count").innerText = count;
+  </script>
 
     
     
   </body>
 </html>
+
 
 
 
