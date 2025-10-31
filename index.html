@@ -576,29 +576,9 @@
       crossorigin="anonymous"
     ></script>
     
-     <!-- Sayaç -->
-   <h2>Bloguma Hoş Geldiniz</h2>
-  <p>Bu sayfa <span id="view-count">yükleniyor...</span> kez görüntülendi.</p>
-
-  <script>
-    // CountAPI için namespace ve pageKey
-    const namespace = "semih_blog";  // Projene özel bir isim
-    const pageKey   = "anasayfa";    // Bu sayfa için anahtar
-
-    // Ziyaretçi sayısını artır
-    fetch(`https://api.countapi.xyz/hit/${namespace}/${pageKey}`)
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("view-count").innerText = data.value;
-      })
-      .catch(err => {
-        document.getElementById("view-count").innerText = "Bağlantı hatası!";
-        console.error("CountAPI hatası:", err);
-      });
-  </script>
-    
   </body>
 </html>
+
 
 
 
