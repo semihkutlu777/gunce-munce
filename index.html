@@ -580,22 +580,28 @@
       crossorigin="anonymous"
     ></script>
 
-  <script>
-  // Bu sayfa için benzersiz bir isim veriyoruz
-  const sayfaAnahtari = "blogum_anasayfa";
+ <p>Bu sayfa <span id="view-count">yükleniyor...</span> kez görüntülendi.</p>
 
-  // CountAPI sitesine istek gönder, sayaç +1 artsın
-  fetch(`https://api.countapi.xyz/hit/${sayfaAnahtari}`)
+<script>
+  // Benzersiz bir anahtar belirle (örnek: domain_adin_anasayfa)
+  const namespace = "semih_blog";  // senin blog adın olabilir
+  const pageKey = "anasayfa";      // sayfaya göre değiştir
+
+  fetch(`https://api.countapi.xyz/update/${namespace}/${pageKey}/?amount=1`)
     .then(res => res.json())
     .then(data => {
-      // Gelen sayıyı sayfada göster
       document.getElementById("view-count").innerText = data.value;
     })
-    .catch(err => console.log("Sayaç hatası:", err));
+    .catch(err => {
+      document.getElementById("view-count").innerText = "Bağlantı hatası!";
+      console.error("CountAPI hatası:", err);
+    });
 </script>
+
     
     
   </body>
 </html>
+
 
 
