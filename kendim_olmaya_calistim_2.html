@@ -1,9 +1,16 @@
-<!doctype html>
+<!doctype html class="h-100">
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kendimce İyilik</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
  
     <style>
@@ -64,21 +71,57 @@ h1,h2{
   width:100%;
 }
        
-.previous_article{
-    background-color: black;
-    color: white;
+.previous-article{
+    position: absolute;
+  background-color: black;
+    
     padding: 5px;
-    border-radius: 20%
+    border-radius:5px;   
 }
-
 
     </style>
 
 
 
   </head>
-  <body>
+  <body class="h-100 d-flex flex-column">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">
+          <i class="fa-solid fa-house"></span></i>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mobile"
+        ><span class="navbar-toggler-icon"> </button>
 
+        <div id="mobile" class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link ">Anasayfa</a>
+            </li>
+
+            </li>
+
+            <li class="nav-item">
+              <a href="blog.html" class="nav-link active">Blog</a>
+            </li>
+             <li class="nav-item">
+              <a href="contact.html" class="nav-link">İletişim</a>
+            </li>
+          </ul>
+
+          <form class="d-flex" action="blog.html" method="GET">
+  <input type="text" name="q" class="form-control me-1" placeholder="Ara..." />
+  <button type="submit" class="btn btn-warning">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+</form>
+        </div>
+      </div>
+    </nav>
 <div class="container">
 
 
@@ -86,18 +129,15 @@ h1,h2{
 <div class="destek-ol">
   <h2 class="text-center">Görüşlerinizi patreonda belirtin!(resime tıklayın)</h2>
 
-
-
-
-
  <!-- yeni sekmede açmak için (güvenlik için rel ekleyin) -->
-<a href="https://www.patreon.com/posts/kendimce-iyilik-146514041">
+<a href="#">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Patreon_logo_with_wordmark.svg/1280px-Patreon_logo_with_wordmark.svg.png" alt="Destek ol - Patreon" />
 </a>
 </div>
 
 
-<a class="previous_article" href="kendim_olmaya_calıstım.html">İİLK YAZIYA GİT</a>
+
+
 <header>
     <h1>Kendimce iyilik</h1>
 </header>
@@ -185,12 +225,12 @@ Bilmiyorum belki de zamanında iyilik yapıp istediğim karşılığı alamadım
 
 
 
-<div class="footer">
-<p>&copy; 2025 Semih Kutlu. Tüm Hakları Saklıdır</p>
-</div>
+<footer class="py-5 bg-dark text-white mt-auto">
+  <div class="container text-center">
+    <span>&copy; 2025 Semih Kutlu. Tüm Hakları Saklıdır</span>
+  </div>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
-
 </html>
-
