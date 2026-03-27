@@ -1,661 +1,209 @@
-<!DOCTYPE html>
+<!doctype html class="h-100">
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Anasayfa</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="index_style.css" />
+  <title>Günce-Münce</title>
 
-    <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        line-height: 1.6;
-        background-color: #f4f4f4;
-      }
+<style>
 
-      .kel-an {
-        background-color: rgb(14, 129, 129);
-        color: white;
-        font-weight: bolder;
-        position: absolute;
-        z-index: 1;
-        padding: 2px;
-      }
+.card-img-top{width: 100%;
+  height: 25vh;
+  object-fit: cover;
+}
+ 
 
-      .banner {
-        border: 1px solid #ccc;
-        margin: 2px 0;
-      }
+@media (min-width:768px){
+    
+.card-img-top{
+  height: 40vh;
+  
+}
+  }
 
-      /* NAVBAR BAŞLANGIÇ*/
 
-      .navbar-brand {
-        letter-spacing: 2px;
-      }
 
-      .navbar-brand::first-letter {
-        font-size: 25px;
-      }
+</style>
 
-      /* ANASAYFA BAŞLANGIÇ */
 
-      .oyb {
-        text-align: center;
-      }
-
-      .carousel-item {
-        height: 400px;
-      }
-
-      .card .btn {
-        display: block;
-      }
-
-      .card-img-top {
-        height: 200px;
-      }
-
-      .hyler {
-        display: flex;
-      }
-
-      .card {
-        position: relative;
-        padding: 12px;
-        margin-top: 20px;
-      }
-
-      .card .haftanin-yazilari {
-        background-color: red;
-        position: absolute;
-        right: 12px;
-        color: white;
-        padding: 3px;
-        font-weight: bolder;
-      }
-
-      @media (max-width: 992px) {
-        #bir .col-md-6 {
-          width: 100% !important;
-          max-width: 100% !important;
-          flex: none !important; /* Bootstrap flex ayarlarını sıfırla */
-        }
-      }
-
-      /* 2.Satır */
-
-      #iki .card {
-        width: 25%;
-      }
-
-      .yy {
-        position: absolute;
-        right: 12px;
-        background-color: green;
-        color: white;
-      }
-
-      #iki .col-md.d-flex {
-        flex-wrap: wrap !important;
-      }
-
-      @media (max-width: 992px) {
-        #iki .col-md.d-flex .card {
-          flex: 0 0 33.333% !important;
-          max-width: 33.333% !important;
-        }
-      }
-
-      @media (max-width: 768px) {
-        #iki .col-md.d-flex .card {
-          flex: 0 0 50% !important;
-          max-width: 50% !important;
-        }
-      }
-
-      @media (max-width: 576px) {
-        #iki .col-md.d-flex .card {
-          flex: 0 0 100% !important;
-          max-width: 100% !important;
-        }
-      }
-
-      .baslik-1 {
-        text-align: center;
-        background-color: red;
-        color: white;
-        margin-top: 12px;
-      }
-
-      /* 3. Satır */
-
-      #uc .card {
-        width: 25%;
-      }
-
-      .yy {
-        position: absolute;
-        right: 12px;
-        background-color: green;
-        color: white;
-      }
-
-      #uc .col-md.d-flex {
-        flex-wrap: wrap !important;
-      }
-
-      @media (max-width: 992px) {
-        #uc .col-md.d-flex .card {
-          flex: 0 0 33.333% !important;
-          max-width: 33.333% !important;
-        }
-      }
-
-      @media (max-width: 768px) {
-        #uc .col-md.d-flex .card {
-          flex: 0 0 50% !important;
-          max-width: 50% !important;
-        }
-      }
-
-      @media (max-width: 576px) {
-        #uc .col-md.d-flex .card {
-          flex: 0 0 100% !important;
-          max-width: 100% !important;
-        }
-      }
-
-      .baslik-2 {
-        text-align: center;
-        background-color: red;
-        color: white;
-        margin-top: 12px;
-      }
-
-      .card:hover {
-        transform: scale(1.03);
-        transition: 0.5s;
-        z-index: 1;
-        box-shadow: 15px 15px 8px grey;
-        border-radius: 6px;
-      }
-
-      .footer p {
-        display: flex;
-        text-align: center;
-        margin-top: 20px;
-        padding: 10px 0;
-        background-color: #333;
-        color: #fff;
-        align-items: center;
-        justify-content: center;
-        height: 100px;
-      }
-
-      .carousel-item img {
-        height: 100%;
-      }
-
-      .card img{
-        background-size: contain ;
-      }
-
-    </style>
+    
   </head>
-  <body>
-    <div class="container">
-      <div class="banner d-flex align-items-center">
-        <span class="kel-an">MERAKLISI İÇİN KELİME BİLGİSİ</span>
-        <marquee direction="left"></marquee>
+  <body class="h-100 d-flex flex-column">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">
+          <i class="fa-solid fa-house"></span></i>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mobile"
+        ><span class="navbar-toggler-icon"> </button>
+
+        <div id="mobile" class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link active">Anasayfa</a>
+            </li>
+
+            </li>
+
+            <li class="nav-item">
+              <a href="blog.html" class="nav-link ">Blog</a>
+            </li>
+             <li class="nav-item">
+              <a href="contact.html" class="nav-link">İletişim</a>
+            </li>
+          </ul>
+
+          <form class="d-flex" action="blog.html" method="GET">
+  <input type="text" name="q" class="form-control me-1" placeholder="Ara..." />
+  <button type="submit" class="btn btn-warning">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+</form>
+        </div>
       </div>
+    </nav>
 
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">günce.münce.com</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Anasayfa</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#baslik-1">Yazıyor! Yazıyor!</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#baslik-2">Göz Gezdirmelikler</a>
-              </li>
-              <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Tüm Yazılar(Kronolojik )</a>
-        </li> -->
+    <header>
 
-              <li class="nav-item">
-                <a class="nav-link" href="hakkımda.html">Hakkımda</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="iletişim.html">İletişim</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="destek-ol.html">Destek Ol</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <div class="text-center pt-5 mt5 px-4 border-bottom"> 
 
-      <!-- NAVBAR BİTİŞ -->
+        <h1  class="display-4 fw-bold">Bu Blog'u Kurma Amacım</h1>
 
-      <!-- ANASAYFA BAŞLANGIÇ -->
 
-      <div class="row" id="bir">
-        <div class="col-md-6">
-          <h2 class="oyb">Göz Gezdirmelikler</h2>
-          <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-              <button
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Slide 1"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="1"
-                aria-label="Slide 2"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="2"
-                aria-label="Slide 3"
-              ></button>
-            </div>
-            <div class="carousel-inner">
-             
-              <div class="carousel-item active" >
-                <a href="El-Vedud.html">
-                  <img
-                    src="https://diyanethabercomtr.teimg.com/crop/1280x720/diyanethaber-com-tr/uploads/2024/03/48-el-vedud-1.jpg"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                </a>
-              </div>
-             
-               <div class="carousel-item">
-                <a href="kendim_olmaya_calistim_2.html">
-                  <img
-                    src="https://www.islamveihsan.com/wp-content/uploads/2023/07/quothicbir-iyilik-karsiliksiz-kalmazquot-hadisi-192058.jpg?1689942420"
-                    class="d-block w-100"
-                    alt="..."
-                  />
-                </a>
-              </div>
-              
-              <div class="carousel-item">
-                <a href="kendim_olmaya_calıstım.html">
-                <img
-                  src="https://hthayat.haberturk.com/im/2022/05/13/ver1652433755/1079238_620x360.jpg"
-                  alt="..."
-                />
-                </a>
-              </div>
-              
-              
-            </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+
+        <div class="col-md-6 mx-auto">
+
+          <p class="lead mb-4">Blogu kendime olduğu kadar ilgilenen okuyuculara örnek olsun kendi elim ile kodladım ve ileride daha iyisini öğrendikçe daha iyi kodlayıp sizlere sunacağım. Burada Öğreneceğiniz bilgiler ile sosyal hayattaki davranışlarınızı yönetmeyi ve yönlendirmeyi yani "NASIL DAHA İYİ BİRİ OLUNULUR"u sizlerin ve örnek insanların deyimlerimden de faydalanarak, sizlerle beraber öğrenelim, uygulayalım, gelişelim amacı güderek bu fikre karar verdim. Bu blog hayat yolculuğuun bir parçası, bazen öğrendiklerimi, bazen de hatalarımdan çıkardığım derslerimi paylaşıcam ki sizler de aynı hataları yapmayın.</p>
+
         </div>
 
-        <div class="col-md-6">
-          <div class="hyd"></div>
-
-          <div style="text-align: center">
-            <h2>Haftanın Yazıları</h2>
-          </div>
-
-          <div class="hyler">
-            <div class="card" style="width: 50%">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm9IiMdHSM7VIPAez4xX9s1eHXb0pkmV2oaA&s"
-                class="card-img-top"
-                alt="..."
-              />
-              <span class="haftanin-yazilari">Tavsiyem</span>
-              <div class="card-body">
-                <h5 class="card-title">Ciks başlık</h5>
-                <p class="card-text">Çok yakında</p>
-                <a href="#" class="btn btn-primary">Yazıya Git!</a>
-              </div>
-            </div>
-
-            <div class="card" style="width: 50%">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm9IiMdHSM7VIPAez4xX9s1eHXb0pkmV2oaA&s"
-                class="card-img-top"
-                alt="..."
-              />
-              <span class="haftanin-yazilari">Şiddetle Tavsiyem</span>
-              <div class="card-body">
-                <h5 class="card-title">Ciks Başlık</h5>
-                <p class="card-text">Çok yakında</p>
-                <a href="#" class="btn btn-primary">Yazıya Git!</a>
-              </div>
-            </div>
-          </div>
+        <div class="text-center mb-4">
+        <div class="btn btn-primary">
+          <i class="fa-solid fa-caret-right"></i> Yazılarıma Git!
+        </div>
+        <div class="btn btn-outline-secondary">
+          <i class="fa-solid fa-caret-right"></i> Yazılarımı Yorumla!
         </div>
       </div>
 
-      <!-- ANASAYFA SONU -->
-
-      <!-- 2. SATİR -->
-
-      <h2 id="baslik-1" class="baslik-1">YAZIYOR! YAZIYOR!</h2>
-
-      <div class="banner d-flex align-items-center">
-        <span class="kel-an">MERAKLISI İÇİN KELİME BİLGİSİ</span>
-        <marquee direction="left">İkircik=Kuşku, İşkil</marquee>
-      </div>
-
-      <div class="row" id="iki">
-        <div class="col-md d-flex">
-
-
-            <div class="card">
-            <img
-              src="https://diyanethabercomtr.teimg.com/crop/1280x720/diyanethaber-com-tr/uploads/2024/03/48-el-vedud-1.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-            <span class="yy">Allah Hakkında-1</span>
-            <div class="card-body">
-              <h5 class="card-title">Allah'ı Anlamak</h5>
-              <p class="card-text">
-                El-Vedud ile ilgili şeyler yazdım
-              </p>
-              <a href="kendim_olmaya_calistim_2.html" class="btn btn-primary">Yazıya Git!</a>
-            </div>
-          </div>
-
-
-          <div class="card">
-            <img
-              src="https://www.islamveihsan.com/wp-content/uploads/2023/07/quothicbir-iyilik-karsiliksiz-kalmazquot-hadisi-192058.jpg?1689942420"
-              class="card-img-top"
-              alt="..."
-            />
-            <span class="yy">Kendilik-2</span>
-            <div class="card-body">
-              <h5 class="card-title">Kendimce iyilik</h5>
-              <p class="card-text">
-                İyiliğe dair bir şeyler yazdım.
-              </p>
-              <a href="kendim_olmaya_calistim_2.html" class="btn btn-primary">Yazıya Git!</a>
-            </div>
-          </div>
-
-
-
-
-
-          <div class="card">
-            <img
-              src="https://hthayat.haberturk.com/im/2022/05/13/ver1652433755/1079238_620x360.jpg
-"
-              class="card-img-top"
-              alt="..."
-            />
-            <span class="yy">Kendilik-1</span>
-            <div class="card-body">
-              <h5 class="card-title">Kendim olmaya çalışmıştım</h5>
-              <p class="card-text">
-                Kendimden ve iyiliğe bakış açımdan bahsettim.
-              </p>
-              <a href="kendim_olmaya_calıstım.html" class="btn btn-primary">Yazıya Git!</a>
-            </div>
-          </div>
-
-          
-          <div class="card">
-            <img
-              src="https://psikologiremturan.com/wp-content/uploads/2024/11/aidiyet.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-            <span class="yy">Aidiyet-1</span>
-            <div class="card-body">
-              <h5 class="card-title">Aidiyet Nedir?</h5>
-              <p class="card-text">
-                Aidiyet hakkındaki düşüncelerim.
-              </p>
-              <a href="aidiyet.html" class="btn btn-primary">Yazıya Git!</a>
-            </div>
-          </div>
-          
-          
-          
-          
-          <div class="card">
-            <img
-              src="https://kuantumantalya.com/wp-content/uploads/2020/01/sevgimi_verecek.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-            <span class="yy">Sevgi-1</span>
-            <div class="card-body">
-              <h5 class="card-title">Sevilmeye Dair</h5>
-              <p class="card-text">
-                Sevilmek hakkında bir şeyler tıkırdattım klavyeye
-              </p>
-              <a href="sevgi-1.html" class="btn btn-primary">Yazıya Git!</a>
-            </div>
-          </div>
-          
-        <div class="card">
-  <img src="https://www.tpocg.org/blog/wp-content/uploads/2021/07/20210726_031500.jpg" class="card-img-top" alt="...">
-  <span class="yy">Sevgi-2</span>
-  <div class="card-body">
-    <h5 class="card-title">Harbiden Sevmek Ne Demek</h5>
-    <p class="card-text">Sevgiden bahsettim</p>
-    <a href="sevgi-2.html" class="btn btn-primary">Yazıya Git!</a>
-  </div>
-</div>
-
-<div class="card">
-  <img src="https://yasveolumbilgeligi.org/wp-content/uploads/2024/08/olum-yasam-varolus.jpg" class="card-img-top" alt="...">
-  <span class="yy">Ölüm-1</span>
-  <div class="card-body">
-    <h5 class="card-title">Ölmek nedir Bilir Misin</h5>
-    <p class="card-text">Ölmek hakkında ilginç şeyler yazdığımı düşünüyorum</p>
-    <a href="ölüm-1.html" class="btn btn-primary">Yazıya Git!</a>
-  </div>
-</div>
-
-<div class="card">
-  <img src="https://www.nazimserin.com.tr/wp-content/uploads/2017/04/2.jpg" class="card-img-top" alt="...">
-  <span class="yy">Değer-1</span>
-  <div class="card-body">
-    <h5 class="card-title">Değerli hissetmek</h5>
-    <p class="card-text">Değerli hissetmek adına düşüncelerimi paylaştım</p>
-    <a href="degerli-hissetmek.html" class="btn btn-primary">Yazıya Git!</a>
-  </div>
-</div>
+      <div class="overflow-hidden" style="max-height: 20vh;">
+        <div class="container px-5 text-center">
+          <img src="https://cdn.dsmcdn.com/mrktng/seo/22aralik4/gunluk-nasil-yazilir-4.jpg"  class="img-fluid border rounded-3 shahadow-lg mb-4" width="700" height="500" alt="">
         </div>
       </div>
 
-      <!-- İKİNCİ SATIR SONU -->
 
-      <!-- üÇÜNCÜ SATIR BAŞLANGICI -->
-
-      <h2 id="baslik-2" class="baslik-2">Ortaya Karışık</h2>
-
-      <div class="banner d-flex align-items-center">
-        <span class="kel-an">MERAKLISI İÇİN KELİME BİLGİSİ</span>
-        <marquee direction="left">İkircik=Kuşku, İşkil</marquee>
       </div>
 
-      <div class="row" id="uc">
-        <div class="col-md d-flex">
-          <div class="card">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm9IiMdHSM7VIPAez4xX9s1eHXb0pkmV2oaA&s"
-              class="card-img-top"
-              alt="..."
-            />
-            <span class="yy">Konu bilemem kaç</span>
-            <div class="card-body">
-              <h5 class="card-title">Ciks Başlık</h5>
-              <p class="card-text">klavyeden damlayan bal</p>
-              <a href="#" class="btn btn-primary">Yazıya Git!</a>
-            </div>
-          </div>
+      <div class="text-center pt-5 mt5 px-4 border-bottom"> 
 
-          <!-- <div class="card">
-  <img src="img/foto7.jpg" class="card-img-top" alt="...">
-  <span class="yy">Üslup-45</span>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="#" class="btn btn-primary">Yazıya Git!</a>
-  </div>
-</div>
+        <h1  class="display-4 fw-bold">BEN KİMİM</h1>
 
-<div class="card">
-  <img src="img/foto8.jpg" class="card-img-top" alt="...">
-  <span class="yy">Sevgi-12</span>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="#" class="btn btn-primary">Yazıya Git!</a>
-  </div>
-</div>
 
-<div class="card">
-  <img src="img/foto9.jpeg" class="card-img-top" alt="...">
-  <span class="yy">Örnek Olmak-58</span>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="#" class="btn btn-primary">Yazıya Git!</a>
-  </div>
-</div> -->
+
+        <div class="col-md-6 mx-auto">
+
+          <p class="lead mb-4">İsmim Semih. Kişisel Gelişim, Psikoloji, Din, Dilbilim ve Sosyolojiyle ilgilenen biriyim.</p>
+
         </div>
+
       </div>
 
-      <h3 class="text-center p-4">GÜNCE MÜNCE Blogu Sizlerle</h3>
-      <hr />
 
-      <div class="row">
-        <div class="col-md-4 p-3">
-          <div class="list-group list-group-flush text-center">
-            <li class="list-group-item list-group-item-action">
-              <a class="text-decoration-none" href="#baslik-1"
-                >Yazıyor! Yazıyor!</a
-              >
-            </li>
-            <li class="list-group-item list-group-item-action">
-              <a class="text-decoration-none" href="#baslik-2"
-                >Ortaya Karışık</a
-              >
-            </li>
-            <li class="list-group-item list-group-item-action">
-              <a class="text-decoration-none" href="#baslik-1"
-                >Tüm Yazılar(Kronolojik)</a
-              >
-            </li>
-          </div>
+      <div class="text-center pt-5 mt5 px-4 border-bottom"> 
+
+        <h1  class="display-4 fw-bold">HOBİLERİM</h1>
+
+
+
+        <div class="col-md-6 mx-auto">
+
+          <p class="lead mb-4">Tabirlere bayılırım, öğrendiğim/duyduğum tabirleri günlük hayatta kullanmak benim için bir zevktir. İnsanların hareketlerini gözlemleyip çıkarımlar yapmayı seviyorum. Kitap okumayı severim. Gitar çalmayı öğreniyorum.</p>
+
         </div>
 
-        <div class="col-md-4 p-3">
-          <div class="list-group list-group-flush text-center">
-            <li class="list-group-item list-group-item-action">
-              <a class="text-decoration-none" href="#baslik-1"
-                >Patreon Destek</a
-              >
-            </li>
-            <li class="list-group-item list-group-item-action">
-              <a class="text-decoration-none" href="#baslik-1"
-                >BuyMeACoffe Destek</a
-              >
-            </li>
-            <li class="list-group-item list-group-item-action">
-              <a class="text-decoration-none" href="#baslik-1"
-                >Yazıyor! Yazıyor!</a
-              >
-            </li>
-          </div>
-        </div>
 
-        <div class="col-md-4 p-3">
-          <div class="list-group list-group-flush text-center">
-            <li class="list-group-item">
-              <a class="text-decoration-none" href="#baslik-1"
-                >Yazıyor! Yazıyor!</a
-              >
-            </li>
-            <li class="list-group-item">
-              <a class="text-decoration-none" href="#baslik-2"
-                >Ortaya Karışık</a
-              >
-            </li>
-            <li class="list-group-item">
-              <a class="text-decoration-none" href="#baslik-1"
-                >Yazıyor! Yazıyor!</a
-              >
-            </li>
-            <li class="list-group-item">
-              <a class="text-decoration-none" href="#baslik-1"
-                >Yazıyor! Yazıyor!</a
-              >
-            </li>
-          </div>
-        </div>
       </div>
+
+      <main>
+
+      <div class="bg-dark px-5 py5 text-center text-white">
+
+        <div class="text-center pt-5 mt5 px-4 border-bottom"> 
+
+        <h1  class="display-4 fw-bold">Hedeflerim</h1>
+
+
+
+        <div class="col-md-6 mx-auto">
+
+          <p class="lead mb-4">Web kodlama öğrenimi tamamlayıp, iş sahibi olmak, sonrasında yazılım öğrenmek ve ikisini bir arada yürütmek. İstiklal Marşımızın 10 Kıtasını da ezberlemek. Güzel insan olmak. İyi insanlar biriktirmek. Tamir öğrenmek. Zamana ayak uydurmak. İletişim becerilerimi mükemmel seviyesine çıkarıp insanlara örnek olmak.</p>
+
+        </div>
+
+        <div class="text-center mb-4">
+        
+          <a href="mailto:semih.kutlu.777@gmail.com?subject=Merhaba" class="btn btn-outline-warning"> 
+   <i class="fa-solid fa-caret-right"></i> Hedeflerimi Yorumla
+</a>
+
+        </div>
+        </div>
+
+      </div>
+
+
     </div>
 
-    <div class="footer">
-      <p>&copy; 2025 Semih Kutlu. Tüm Hakları Saklıdır</p>
-    </div>
+
+ <!-- <div class="container my-4">
+        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
+          <div class="col">
+            <div class="card-mb-3 shadow">
+             <img src="https://picsum.photos/200" class="card-img-top" alt="">
+              <div class="card-body">
+                <h5 class="card-title">Lorem, ipsum.</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit, quos!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+</main>
+
+
+
+    </header>
+
+<footer class="py-5 bg-dark text-white mt-auto">
+  <div class="container text-center">
+    <span>&copy; 2025 Semih Kutlu. Tüm Hakları Saklıdır</span>
+  </div>
+</footer>
+
+
+
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -664,4 +212,3 @@
     ></script>
   </body>
 </html>
-
